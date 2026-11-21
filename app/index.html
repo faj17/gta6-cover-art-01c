@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Coast — GTA-style cover maker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>NEON COAST</h1>
+  <p>GTA-style cover maker — your photos never leave your machine.</p>
+</header>
+<main>
+  <div class="preview-wrap">
+    <canvas id="preview" width="960" height="540"></canvas>
+    <div class="preview-meta">
+      <span id="panelLabel">Panel 1 of 4</span>
+      <span>Click a panel to select it. Drag to move its photo, scroll to zoom.</span>
+    </div>
+  </div>
+  <div class="controls">
+    <section>
+      <h2>1 · Photos</h2>
+      <button type="button" class="action-btn ghost" id="addPhotosBtn">Add your photos…</button>
+      <input type="file" id="fileInput" accept="image/*" multiple hidden>
+      <div id="photoStrip"></div>
+      <p id="photoCount">Loading samples…</p>
+      <label>Or start from a sample — click one to put it in the selected panel:</label>
+      <div id="sampleRow"></div>
+    </section>
+    <section>
+      <h2>2 · Layout</h2>
+      <div class="opt-row" id="layoutRow"></div>
+    </section>
+    <section>
+      <h2>3 · Colour grade</h2>
+      <div class="opt-row" id="gradeRow"></div>
+    </section>
+    <section>
+      <h2>4 · Caption</h2>
+      <label for="titleInput">Title</label>
+      <input type="text" id="titleInput" value="NEON COAST" maxlength="48">
+      <label for="subtitleInput">Subtitle</label>
+      <input type="text" id="subtitleInput" value="A NIGHT TO REMEMBER" maxlength="64">
+    </section>
+    <section>
+      <h2>5 · Crop the selected panel</h2>
+      <label for="zoomRange">Zoom — <span id="zoomVal">1.00x</span></label>
+      <input type="range" id="zoomRange" min="1" max="4" step="0.05" value="1">
+      <button type="button" class="action-btn ghost" id="fillAllBtn">Fill every panel with this photo</button>
+      <button type="button" class="action-btn ghost" id="resetCropBtn">Reset crop</button>
+    </section>
+    <section>
+      <h2>6 · Export</h2>
+      <div class="opt-row" id="sizeRow"></div>
+      <button type="button" class="action-btn primary" id="exportBtn">Export PNG</button>
+      <button type="button" class="action-btn ghost" id="exportAllBtn">Export all three sizes</button>
+      <p id="exportStatus">Three steps from a photo to a poster: pick a photo, pick a layout, export.</p>
+    </section>
+  </div>
+</main>
+<footer>
+  Neon Coast is an original cover maker. It uses no Rockstar Games logo, artwork,
+  character or font — its lettering is drawn from system fonts on canvas, and its
+  three sample scenes are original art drawn for this app. Photos you add are read
+  in your browser and never uploaded.
+</footer>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
